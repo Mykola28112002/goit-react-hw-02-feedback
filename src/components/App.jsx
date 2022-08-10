@@ -1,16 +1,34 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+import { Section } from './Section/Section';
+import React, { Component } from "react";
+
+import buttons from '../data/buttons.json';
+
+
+export class App extends Component {
+    
+  state = {
+      good: 0,
+      neutral: 0,
+      bad: 0
+  }
+  
+  static propTypes = {};
+
+  options = () => {
+  }
+  onLeaveFeedback = () => { }
+  good = () => {console.log('kjdgfhvuiasfg')}
+  neutral = () => { }
+  bad = () => { }
+  total = () => { }
+  positivePercentage = () => {}
+
+  render() {
+    return <div>
+      <Section buttons={buttons}
+        state={this.state}
+        good={this.good}
+      />
     </div>
-  );
-};
+  }
+}
