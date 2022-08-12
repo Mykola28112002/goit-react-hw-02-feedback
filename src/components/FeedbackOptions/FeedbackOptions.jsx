@@ -1,11 +1,11 @@
 import { Box } from "../../Box";
 import { Button } from "./FeedbackOptions.styled";
 
-export const  FeedbackOptions = ({buttons,good}) => {
+export const  FeedbackOptions = ({options,onLeaveFeedback}) => {
     
     return <Box display='flex' gridGap='10px'>
-        {buttons.map(({button,id}) => {
-            return <Button key={id} onClick={good}  type="button">{button}</Button>
+        {options.map(button => {
+            return <Button key={button} onClick={() => onLeaveFeedback(button)}  type="button">{button}</Button>
         })}
     </Box>;
 

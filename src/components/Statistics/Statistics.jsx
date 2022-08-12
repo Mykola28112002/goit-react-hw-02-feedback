@@ -1,21 +1,20 @@
 import { Div } from './Statistics.styled';
 
-export const Statistics = ({state: {good,neutral,bad}}) => {
+export const Statistics = ({options, total, positivePercentage}) => {
     return <Div>
-        <p>Good: 
-            <span> {good}</span>
+        {Object.keys(options).map(key => (
+        <p key={key}>
+          {key} : {options[key]}
         </p>
-        <p>Neutral:
-            <span> {neutral}</span>
+      ))}
+      <div>
+        <p>
+          Total : <span> {total} </span>
         </p>
-        <p>Bad:
-            <span> {bad}</span>
+        <p>
+          PositiveFeedback :
+          <span> {positivePercentage} % </span>
         </p>
-        <p>Total:
-            <span> 7</span>
-        </p>
-        <p>Positive feedback:
-            <span> 24%</span>
-        </p>
+      </div>
     </Div>;
 }
