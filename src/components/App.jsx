@@ -15,11 +15,6 @@ export class App extends Component {
     neutral: this.props.initialNeutral,
     bad: this.props.initialBad,
   };
-   leaveFeedback = type => {
-      this.setState(prevState => ({
-      [type]: prevState[type] + 1,
-    }));
-  };
 
   countleaveFeedback = type => {
       this.setState(prevState => ({
